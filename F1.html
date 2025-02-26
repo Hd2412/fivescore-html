@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiveScore - F1</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E10600;
+            --secondary: #FF4B91;
+            --background: #0F172A;
+            --text: #F8FAFC;
+            --card: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(125deg, var(--background) 0%, #1E293B 100%);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .background-gradient {
+            position: fixed;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle at center, 
+                rgba(225, 6, 0, 0.15) 0%,
+                rgba(255, 75, 145, 0.15) 25%,
+                rgba(0, 207, 232, 0.15) 50%);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleSlide 1s ease forwards;
+            opacity: 0;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin: 1.5rem 0;
+            opacity: 0;
+            animation: fadeIn 1s ease 0.5s forwards;
+        }
+
+        @keyframes titleSlide {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .section {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section li {
+            background: var(--card);
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-gradient"></div>
+
+    <section class="hero">
+        <div>
+            <h1 class="hero-title">Formula 1</h1>
+            <p class="hero-subtitle">Live race updates, team standings, driver interviews, and breaking news</p>
+        </div>
+    </section>
+
+    <section class="section" data-aos="fade-up">
+        <h2>Latest F1 News</h2>
+        <ul>
+            <li>Max Verstappen dominates in Bahrain GP season opener.</li>
+            <li>Mercedes unveils new car design ahead of 2025 season.</li>
+            <li>Ferrari targets aggressive strategy for next race.</li>
+        </ul>
+    </section>
+
+    <section class="section" data-aos="fade-up">
+        <h2>History of Formula 1</h2>
+        <ul>
+            <li>Formula 1 held its first official World Championship race at Silverstone in 1950.</li>
+            <li>F1 has seen legendary drivers like Ayrton Senna, Michael Schumacher, and Lewis Hamilton.</li>
+            <li>The sport is known for its cutting-edge technology and fierce rivalries.</li>
+            <li>F1 teams like Ferrari, McLaren, and Mercedes have shaped the sport's history.</li>
+            <li>The turbocharged era of the 1980s brought unprecedented speed and power.</li>
+            <li>Safety advancements, like the halo device, have saved drivers' lives.</li>
+            <li>The hybrid engine era began in 2014, pushing F1 toward sustainability.</li>
+            <li>F1's global reach spans over 20 countries with iconic tracks like Monaco and Spa.</li>
+            <li>Michael Schumacher’s seven world titles stood as a record until Lewis Hamilton tied it in 2020.</li>
+            <li>The intense rivalry between Senna and Prost defined F1’s golden era.</li>
+            <li>Innovations like ground effect aerodynamics transformed car performance.</li>
+            <li>F1’s cost cap in 2021 aimed to level the playing field between teams.</li>
+            <li>Ferrari remains the most successful team with 16 constructors' championships.</li>
+            <li>Bernie Ecclestone played a pivotal role in shaping F1's commercial success.</li>
+            <li>The Drive to Survive series brought a surge of new fans to the sport.</li>
+            <li>F1 cars can reach speeds of over 220 mph and generate massive downforce.</li>
+            <li>Rain races often deliver some of the most thrilling and unpredictable outcomes.</li>
+            <li>F1's evolution of car design includes major shifts like the introduction of hybrid power units.</li>
+            <li>The 2022 regulation changes brought closer racing and more overtaking opportunities.</li>
+            <li>The sport continues innovating with sustainability goals and technological advancements.</li>
+        </ul>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, easing: 'ease-out-cubic' });
+    </script>
+</body>
+</html>
